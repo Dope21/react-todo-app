@@ -1,29 +1,26 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Content from "./components/Content";
 import Hero from "./components/Hero";
 import Sidebar from "./components/Sidebar";
 import Task from './components/pages/Task';
-import { useState } from 'react';
+import About from './components/pages/About';
+import Login from './components/pages/Login';
+import Register from './components/pages/Register';
 
 function App() {
-
-  const [navShow, setNavShow] = useState(true)
-  const handleNavShow = () => {
-    setNavShow(false)
-  }
 
   return (
     <>
     <Router>
-        <div className="relative w-full h-screen">
-          <div className={"absolute inset-0 bg-black opacity-40 " + (navShow ? "visible" : "invisible")} onClick={handleNavShow}></div>
-          <Sidebar visibility={navShow ? "" : "translate-x-[-100%]"}/>
+        <div className="relative w-full h-screen bg-purple-main">
+          <div className={"absolute inset-0 bg-white dark:bg-black opacity-40 invisible"} />
+          <Sidebar />
           <Hero/>
-          <Content>
             <Routes>
               <Route path='/' exact element={<Task />}/>
+              <Route path='/about' exact element={<About />}/>
+              <Route path='/login' exact element={<Login />}/>
+              <Route path='/register' exact element={<Register/>}/>
             </Routes>
-          </Content>
         </div>
     </Router>
     </>

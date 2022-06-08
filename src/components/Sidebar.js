@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PencilAltIcon, AnnotationIcon, LogoutIcon, MoonIcon, SunIcon } from '@heroicons/react/outline'
 
-function Sidebar(props) {
+function Sidebar() {
     
     const [currentTheme, setCurrentTheme] = useState(localStorage.theme)
 
@@ -16,7 +16,7 @@ function Sidebar(props) {
     }, [currentTheme])
 
     return (
-    <nav className={'text-black bg-white dark:text-white dark:bg-purple-dark w-3/4 fixed h-screen pt-20 px-7 pb-7 flex flex-col transition-all ' + props.visibility}>
+    <nav className={'text-black bg-white dark:text-white dark:bg-purple-dark w-3/4 fixed h-screen pt-20 px-7 pb-7 flex flex-col transition-all translate-x-[-100%]'}>
         <div>
             <h2 className='text-3xl font-bold transition-all'>Welcome, Thanasak</h2>
             <ul className='pt-8 flex flex-col gap-2'>
