@@ -15,10 +15,10 @@
   }
 
   .toggleBtn {
-    @apply absolute bg-purple-main h-full w-[30px] left-0 rounded-full flex items-center justify-center transition-all;
+    @apply absolute text-white bg-purple-main h-full w-[30px] left-0 rounded-full flex items-center justify-center transition-all;
   }
 
   .toggleMove {
-    @apply absolute bg-purple-main h-full w-[30px] translate-x-7 rounded-full flex items-center justify-center transition-all;
+    @apply absolute text-white bg-purple-main h-full w-[30px] translate-x-7 rounded-full flex items-center justify-center transition-all;
   }
 }
