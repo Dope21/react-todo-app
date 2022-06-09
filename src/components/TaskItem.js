@@ -11,7 +11,7 @@ function TaskItem({
   return addTasks.map ((task, index) => (
     <>
       <li 
-        className='relative flex items-center gap-4 text-black dark:text-white' 
+        className='relative flex items-center justify-start gap-4 text-black dark:text-white' 
         key={index}
       >
         <div 
@@ -26,14 +26,12 @@ function TaskItem({
             }
         </div>
         <div>
-          <input 
-            type='text' 
-            className={'font-light bg-transparent border-0 outline-none transition-all '+(task.state ? 'text-slate-400 line-through' : '') } 
-            placeholder='What you want to do?' 
-            value={task.text} 
-            readOnly 
+          <p
+            className={'font-light bg-transparent border-0 outline-none transition-all max-w-xl break-before-auto '+(task.state ? 'text-slate-400 line-through' : '') } 
             key={task.id} 
-          />
+          >
+            {task.text}
+          </p>
           <div className='h-[1px] bg-slate-400 absolute'></div>
         </div>
         <div 

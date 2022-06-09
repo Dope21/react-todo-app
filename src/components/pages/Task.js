@@ -1,4 +1,4 @@
-import { PlusIcon, TrashIcon } from '@heroicons/react/outline'
+import { TrashIcon } from '@heroicons/react/outline'
 import React, { useEffect, useState } from 'react'
 import TaskItem from '../TaskItem'
 
@@ -28,15 +28,19 @@ function Task() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const task = {
-      id: Math.floor(Math.random() * 10000),
-      state: false,
-      text: inputTask
+    if (inputTask !== "") {
+      const task = {
+        id: Math.floor(Math.random() * 10000),
+        state: false,
+        text: inputTask
+      }
+      const newTask = [task, ...tasks]
+      setTasks(newTask)
+      setInputTask('')
+    } else {
+      return
     }
-    const newTask = [task, ...tasks]
-    setTasks(newTask)
-    setInputTask('')
+
   }
 
   const completeTask = (id) => {
@@ -67,7 +71,7 @@ function Task() {
                   <input 
                     type='text' 
                     className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
-                    placeholder='What you want to do?' 
+                    placeholder='What do you want to do?' 
                     value={inputTask} 
                     onChange={handleInputChange}
                   />
@@ -82,17 +86,12 @@ function Task() {
               />
             </ul>
           <div className='flex justify-center fixed bottom-0 left-0 w-full p-7'>
-            <div className='max-w-xl flex justify-between w-full'>
+            <div className='max-w-xl flex justify-end w-full'>
               <div 
                 className='bg-purple-main rounded-full text-white w-[60px] h-[60px] flex items-center justify-center cursor-pointer'
                 onClick={handleDelete}
               >
                 <TrashIcon className='w-7'/>
-              </div>
-              <div 
-                className='bg-purple-main rounded-full text-white w-[60px] h-[60px] flex items-center justify-center cursor-pointer'
-              >
-                <PlusIcon className='w-7'/>
               </div>
             </div>
           </div>
