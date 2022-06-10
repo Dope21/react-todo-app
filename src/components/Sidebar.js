@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PencilAltIcon, AnnotationIcon, LogoutIcon } from '@heroicons/react/outline'
+import { PencilAltIcon, AnnotationIcon, LogoutIcon, LoginIcon } from '@heroicons/react/outline'
 import ThemeSwither from './ThemeSwither'
 
 function Sidebar(props) {
@@ -14,8 +14,9 @@ function Sidebar(props) {
                 <h2 className='text-3xl font-bold transition-all'>Welcome, Thanasak</h2>
                 <ul className='pt-8 flex flex-col gap-2'>
                     <li onClick={handleItemClick}><Link to="/" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><PencilAltIcon className='w-6 mr-3 text-purple-main' />Task</Link></li>
-                    <li onClick={handleItemClick}><Link to="/" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><AnnotationIcon className='w-6 mr-3 text-purple-main' />About</Link></li>
-                    <li onClick={handleItemClick}><Link to="/" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><LogoutIcon className='w-6 mr-3 text-purple-main' />Logout</Link></li>
+                    <li onClick={handleItemClick}><Link to="/about" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><AnnotationIcon className='w-6 mr-3 text-purple-main' />About</Link></li>
+                    <li onClick={handleItemClick}><Link to="/login" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><LoginIcon className='w-6 mr-3 text-purple-main' />Login</Link></li>
+                    {/* <li onClick={handleItemClick}><Link to="/" className='p-3 w-full bg-black bg-opacity-10 rounded-md flex items-center font-semibold transition-all hover:text-purple-main'><LogoutIcon className='w-6 mr-3 text-purple-main' />Logout</Link></li> */}
                 </ul>             
             </div>
             <div className='mt-auto flex items-center gap-2'>

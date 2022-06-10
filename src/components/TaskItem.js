@@ -8,6 +8,11 @@ function TaskItem({
   addTasks,
   deleteShow
 }) {
+  const checkBox = <CheckCircleIcon className='w-7 text-purple-main cursor-pointer text-center'/> 
+  const unCheckBox = <div className='w-7 h-7 flex items-center justify-center'>
+                      <span className='rounded-full border border-purple-main w-[22.4px] h-[22.4px]' />
+                     </div>
+
   return addTasks.map ((task, index) => (
     <>
       <li 
@@ -17,13 +22,7 @@ function TaskItem({
         <div 
           className='flex cursor-pointer select-none' 
           onClick={()=> { completeTask(task.id) }}>
-            { 
-              task.state ? 
-                <CheckCircleIcon className='w-7 text-purple-main cursor-pointer text-center'/> 
-                : <div className='w-7 h-7 flex items-center justify-center'>
-                    <span className='rounded-full border border-purple-main w-[22.4px] h-[22.4px]'></span>
-                  </div>
-            }
+            { task.state ? checkBox :  unCheckBox }
         </div>
         <div>
           <p

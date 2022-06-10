@@ -30,12 +30,16 @@ function App() {
           <div className={"absolute inset-0 bg-black opacity-40 z-10 " + (navShow ? "visible" : "invisible")} onClick={navHide} />
           <Sidebar navShow={navShow ? "" : "translate-x-[-100%]"} navItemClick={getNavClick} />
           <Hero menuClick={getMenuClick} />
-            <Routes>
-              <Route path='/' exact element={<Task />}/>
-              <Route path='/about' exact element={<About />}/>
-              <Route path='/login' exact element={<Login />}/>
-              <Route path='/register' exact element={<Register/>}/>
-            </Routes>
+          <main className='bg-white dark:bg-purple-dark rounded-t-xl min-h-[575px] px-7 pt-7 pb-28'>
+            <div className='h-full max-w-xl mx-auto'>
+              <Routes>
+                <Route path='/' exact element={<Task />}/>
+                <Route path='/about' exact element={<About />}/>
+                <Route path='/login' exact element={<Login />}/>
+                <Route path='/register' exact element={<Register/>}/>
+              </Routes>
+            </div>
+          </main>
         </div>
     </Router>
     </>

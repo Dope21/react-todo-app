@@ -1,5 +1,6 @@
 import { TrashIcon } from '@heroicons/react/outline'
 import React, { useEffect, useState } from 'react'
+import Button from '../Button'
 import TaskItem from '../TaskItem'
 
 function Task() {
@@ -60,31 +61,32 @@ function Task() {
 
   return (
     <>
-      <main className='bg-white dark:bg-purple-dark rounded-t-xl min-h-[575px] px-7 pt-7 pb-28'>
-        <div className='h-full max-w-xl mx-auto'>
-            <ul className='flex flex-col gap-4 overflow-hidden min-h-screen '>
-              <li>
-                <form 
-                  className='relative flex items-center gap-4 text-black dark:text-white transition-all'
-                  onSubmit={handleSubmit}
-                >
-                  <input 
-                    type='text' 
-                    className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
-                    placeholder='What do you want to do?' 
-                    value={inputTask} 
-                    onChange={handleInputChange}
-                  />
-                  <button type='submit' className='bg-purple-main p-2 cursor-pointer rounded-md text-white'>enter</button>
-                </form>
-              </li>
-              <TaskItem 
-                addTasks={tasks} 
-                completeTask={completeTask} 
-                deleteTask={deleteTask} 
-                deleteShow={deleteShow} 
-              />
-            </ul>
+          <ul className='flex flex-col gap-4 overflow-hidden min-h-screen '>
+            <li>
+              <form 
+                className='relative flex items-center gap-4 text-black dark:text-white transition-all'
+                onSubmit={handleSubmit}
+              >
+                <input 
+                  type='text' 
+                  className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
+                  placeholder='What do you want to do?' 
+                  value={inputTask} 
+                  onChange={handleInputChange}
+                />
+                <Button
+                  text='Enter'
+                  type='submit'
+                />
+              </form>
+            </li>
+            <TaskItem 
+              addTasks={tasks} 
+              completeTask={completeTask} 
+              deleteTask={deleteTask} 
+              deleteShow={deleteShow} 
+            />
+          </ul>
           <div className='flex justify-center fixed bottom-0 left-0 w-full p-7'>
             <div className='max-w-xl flex justify-end w-full'>
               <div 
@@ -94,9 +96,7 @@ function Task() {
                 <TrashIcon className='w-7'/>
               </div>
             </div>
-          </div>
-        </div>
-      </main>
+          </div>]
     </>
   )
 }
