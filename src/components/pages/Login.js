@@ -1,12 +1,40 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { setUser } from '../../utils/Common'
 import Button from '../Button'
 import Input from '../Input'
 
-function Login() {
+function Login(props) {
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const jsonData = {
+      username: data.get('username'),
+      password: data.get('password'),
+    }
+
+    fetch('http://localhost:3333/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jsonData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      setUser(data.token, data.username)
+      window.location = '/task'
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+
+
   return (
     <>
-      <form>
+      <form onSubmit={handleLogin}>
         <Input 
           type='email'
           name='username'

@@ -18,6 +18,7 @@ function Input({
             <input 
                 type={type} 
                 id={name} 
+                name={name}
                 placeholder={holder}
                 className='bg-black bg-opacity-10 py-3 px-4 rounded-md outline-none'
                 required

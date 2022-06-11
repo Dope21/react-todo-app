@@ -96,7 +96,7 @@ function Task() {
                 <TrashIcon className='w-7'/>
               </div>
             </div>
-          </div>]
+          </div>
     </>
   )
 }
