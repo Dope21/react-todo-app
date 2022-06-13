@@ -15,7 +15,7 @@ function Task() {
     }
   })
 
-  useEffect( ()=> {
+  useEffect( () => {
     localStorage.setItem('tasks', JSON.stringify(tasks))
   },[tasks])
 
@@ -61,42 +61,46 @@ function Task() {
 
   return (
     <>
-          <ul className='flex flex-col gap-4 overflow-hidden min-h-screen '>
-            <li>
-              <form 
-                className='relative flex items-center gap-4 text-black dark:text-white transition-all'
-                onSubmit={handleSubmit}
-              >
-                <input 
-                  type='text' 
-                  className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
-                  placeholder='What do you want to do?' 
-                  value={inputTask} 
-                  onChange={handleInputChange}
-                />
-                <Button
-                  text='Enter'
-                  type='submit'
-                />
-              </form>
-            </li>
-            <TaskItem 
-              addTasks={tasks} 
-              completeTask={completeTask} 
-              deleteTask={deleteTask} 
-              deleteShow={deleteShow} 
+      <div className='flex flex-col overflow-hidden min-h-screen '>
+        <div className='mb-4'>
+          <form 
+            className='relative flex items-center gap-4 text-black dark:text-white transition-all'
+            onSubmit={handleSubmit}>
+            <input 
+              type='text' 
+              className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
+              placeholder='What do you want to do?' 
+              value={inputTask} 
+              onChange={handleInputChange}
             />
-          </ul>
-          <div className='flex justify-center fixed bottom-0 left-0 w-full p-7'>
-            <div className='max-w-xl flex justify-end w-full'>
-              <div 
-                className='bg-purple-main rounded-full text-white w-[60px] h-[60px] flex items-center justify-center cursor-pointer'
-                onClick={handleDelete}
-              >
-                <TrashIcon className='w-7'/>
-              </div>
-            </div>
+            <Button text='Enter' type='submit'/>
+          </form>
+        </div>
+        <ul className='flex flex-col gap-4'>
+          {
+            tasks.map((task) => {
+              return <TaskItem 
+                        completeTask={completeTask} 
+                        deleteTask={deleteTask} 
+                        deleteShow={deleteShow} 
+                        key={task.id}
+                        id={task.id}
+                        state={task.state}
+                        text={task.text}
+                      />
+            })
+          }
+        </ul>
+      </div>
+      <div className='flex justify-center fixed bottom-0 left-0 w-full p-7'>
+        <div className='max-w-xl flex justify-end w-full'>
+          <div 
+            className='bg-purple-main rounded-full text-white w-[60px] h-[60px] flex items-center justify-center cursor-pointer'
+            onClick={handleDelete}>
+            <TrashIcon className='w-7'/>
           </div>
+        </div>
+      </div>
     </>
   )
 }

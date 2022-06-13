@@ -9,12 +9,7 @@ function Input({
   return (
     <>
         <div className='flex flex-col gap-2 dark:text-white text-black mb-5'>
-            <label 
-                htmlFor={name}
-                className='font-bold'
-            >
-                {label}
-            </label>
+            <label htmlFor={name} className='font-bold'>{label}</label>
             <input 
                 type={type} 
                 id={name} 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { setUser } from '../../utils/Common'
+import { setUser } from '../../utils/Authen'
 import Button from '../Button'
 import Input from '../Input'
 
-function Login(props) {
+function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault()

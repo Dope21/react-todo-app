@@ -6,7 +6,7 @@ import About from './components/pages/About';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import { useEffect, useState } from 'react';
-import { removeUser } from './utils/Common';
+import { removeUser } from './utils/Authen';
 
 function App() {
 

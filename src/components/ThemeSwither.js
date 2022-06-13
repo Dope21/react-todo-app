@@ -3,7 +3,7 @@ import { MoonIcon, SunIcon } from '@heroicons/react/outline'
 
 function ThemeSwither() {
         
-    const [currentTheme, setCurrentTheme] = useState( () => {
+    const [theme, setTheme] = useState( () => {
         const saveTheme = localStorage.getItem('theme')
         if (saveTheme) {
             return  saveTheme
@@ -13,12 +13,12 @@ function ThemeSwither() {
     })
 
     useEffect(()=> {
-        localStorage.theme = currentTheme
+        localStorage.theme = theme
         document.documentElement.setAttribute("class", localStorage.theme)
-    }, [currentTheme])
+    }, [theme])
 
     const handleThemeClick = () => {
-        setCurrentTheme( currentTheme === "dark" ? "light" : "dark")
+        setTheme( currentTheme => currentTheme === "dark" ? "light" : "dark")
     }
 
     return (
@@ -27,8 +27,8 @@ function ThemeSwither() {
                 <div className='relative w-[66px] h-[30px] rounded-[20px] bg-purple-opacity flex items-center justify-between px-2 cursor-pointer select-none'>
                     <MoonIcon className='w-5 opacity-50' />
                     <SunIcon className='w-5 opacity-50' />
-                    <div className={currentTheme === "dark" ? 'toggleBtn' : 'toggleMove'}>
-                        { currentTheme === "dark"  ? <MoonIcon className='w-5' /> : <SunIcon className='w-5' /> }
+                    <div className={theme === "dark" ? 'toggleBtn' : 'toggleMove'}>
+                        { theme === "dark"  ? <MoonIcon className='w-5' /> : <SunIcon className='w-5' /> }
                     </div>
                 </div>
             </div>
