@@ -22,7 +22,9 @@ function Sidebar(props) {
             <div>
                 <h2 className='text-3xl font-bold transition-all flex flex-col'>
                     Welcome, 
-                    {getUser() ? getUser().split('@')[0] : <span>TODO APP</span>}
+                    <span>
+                        {getUser() ? getUser().split('@')[0] : 'TODO APP'}
+                    </span>
                 </h2>
                 <ul className='pt-8 flex flex-col gap-2'>
                     <li onClick={handleItemClick}><Link to="/" className='sideLink'><PencilAltIcon className='sideIcon' />Task</Link></li>
