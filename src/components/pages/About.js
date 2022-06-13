@@ -9,7 +9,7 @@ function About() {
       <section className='mb-6'>
         <h3 className='font-bold dark:text-white text-black mb-5'>About this app</h3>
         <p className='dark:text-white text-black font-normal text-justify leading-5'>
-          A todo web application allows users to create, edit, and delete their todo list. 
+          A todo web application allows users to create delete their todo task. 
           This project also includes a Theme switching function with Tailwind 
           and an Authentication API with Node, Express and JWT  
         </p>
