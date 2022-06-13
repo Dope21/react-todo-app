@@ -4,7 +4,7 @@ A todo web application allows users to add and delete their todo task.
 This project also includes a Theme switching function with Tailwind 
 and an [Authentication API](https://github.com/Dope21/authentication-api) with Node, Express, JWT and MySQL. 
 
-## Live : 
+## Live : (not available)
 
 ## Stack
 - [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces.
@@ -15,9 +15,13 @@ and an [Authentication API](https://github.com/Dope21/authentication-api) with N
 - [MySql](https://www.mysql.com/) - A relational database management system based on SQL.
 
 ## Features
-- `Todo List` - add or delete todo task and reorder complete task to the bottom.
-- `Dark/Light Theme` - Toggle between two themes and save user preferences for initial theme.
+- `Todo List` - add or delete todo task and re-order complete task to the bottom.
+- `Dark/Light Theme` - toggle between two themes and save user preferences for initial theme.
+- `Login & Register` - you don't need to have an account for this app but you can try this feature.
 - `Authentication` - user login automatically until token expire or logout.
-- `Login & Register`
 
 ## Design
+
+![Task-Page](public/design/tasks.png)
+![Dark-Theme](public/design/dark-theme.png)
+![Light-Theme](public/design/light-theme.png)
