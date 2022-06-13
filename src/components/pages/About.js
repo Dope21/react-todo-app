@@ -22,12 +22,24 @@ function About() {
             <h4 className='mt-3 dark:text-white text-black'>React.js</h4>
           </div>
           <div className='flex flex-col items-center'>
-            <img src={require('../../images/mongodb.png')} alt="mongo-icon" />
-            <h4 className='mt-3 dark:text-white text-black'>MongoDB</h4>
-          </div>
-          <div className='flex flex-col items-center'>
             <img src={require('../../images/tailwind.png')} alt="tailwind-icon" />
             <h4 className='mt-3 dark:text-white text-black'>Tailwind</h4>
+          </div>
+          <div className='flex flex-col items-center'>
+            <img src={require('../../images/node.png')} alt="mongo-icon" />
+            <h4 className='mt-3 dark:text-white text-black'>Node.js</h4>
+          </div>
+          <div className='flex flex-col items-center'>
+            <img src={require('../../images/express.png')} alt="mongo-icon" />
+            <h4 className='mt-3 dark:text-white text-black'>Express</h4>
+          </div>
+          <div className='flex flex-col items-center'>
+            <img src={require('../../images/jwt.png')} alt="mongo-icon" />
+            <h4 className='mt-3 dark:text-white text-black'>JWT</h4>
+          </div>
+          <div className='flex flex-col items-center'>
+            <img src={require('../../images/mysql.png')} alt="mongo-icon" />
+            <h4 className='mt-3 dark:text-white text-black'>MySQL</h4>
           </div>
         </div>
       </section>
