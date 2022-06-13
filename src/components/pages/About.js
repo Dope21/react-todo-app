@@ -10,8 +10,8 @@ function About() {
         <h3 className='font-bold dark:text-white text-black mb-5'>About this app</h3>
         <p className='dark:text-white text-black font-normal text-justify leading-5'>
           A todo web application allows users to create, edit, and delete their todo list. 
-          This project also includes an Authentication with MongoDB 
-          and a Theme switching function with Tailwind CSS. 
+          This project also includes a Theme switching function with Tailwind 
+          and an Authentication API with Node, Express and JWT  
         </p>
       </section>
       <section className='mb-6'>
