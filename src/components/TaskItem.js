@@ -28,7 +28,7 @@ function TaskItem({
           </p>
         </div>
         <div 
-          className={'bg-red-600 absolute px-5 py-2 cursor-pointer transition-all '+ (deleteShow ? 'visible right-0' : 'invisible right-[-100%]')}
+          className={'bg-red-600 absolute px-5 py-2 cursor-pointer transition-all text-white '+ (deleteShow ? 'visible right-0' : 'invisible right-[-100%]')}
           onClick={() => deleteTask(id)}
         >
           <TrashIcon className='w-5'/>

@@ -64,11 +64,11 @@ function Task() {
       <div className='flex flex-col overflow-hidden min-h-screen '>
         <div className='mb-4'>
           <form 
-            className='relative flex items-center gap-4 text-black dark:text-white transition-all'
+            className='relative flex items-center gap-4 transition-all'
             onSubmit={handleSubmit}>
             <input 
               type='text' 
-              className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-white' 
+              className='font-light bg-black bg-opacity-10 w-full p-2 rounded-md border-0 outline-none text-black dark:text-white' 
               placeholder='What do you want to do?' 
               value={inputTask} 
               onChange={handleInputChange}
