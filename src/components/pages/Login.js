@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { setUser } from '../../utils/Authen'
 import Button from '../Button'
 import Input from '../Input'
+import LoginError from '../LoginError'
 
 function Login() {
+
+  const [errShow, setErrShow] = useState(false)
+  
+  const getErrClose = () => {
+    setErrShow( error => error = false )
+  }
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -23,14 +30,17 @@ function Login() {
     })
     .then(response => response.json())
     .then(data => {
-      setUser(data.token, data.username)
-      window.location = '/task'
+      if(data.status) {
+        setUser(data.token, data.username)
+        window.location = '/task'
+      } else {
+        setErrShow( error => error = true )
+      }
     })
     .catch((error) => {
       console.log(error)
     })
   }
-
 
   return (
     <>
@@ -46,6 +56,10 @@ function Login() {
           name='password'
           holder='enter your password'
           label='Password'
+        />
+        <LoginError 
+          status={errShow} 
+          errClose={getErrClose}
         />
         <div className='flex justify-between items-center'>
           <Link to='/register' className='text-purple-main font-light'>Create an account</Link>

@@ -7,6 +7,7 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import { useEffect, useState } from 'react';
 import { removeUser } from './utils/Authen';
+import Content from './components/Content';
 
 function App() {
 
@@ -51,17 +52,15 @@ function App() {
             navItemClick={getNavClick} 
           />
           <Hero menuClick={getMenuClick} />
-          <main className='bg-white dark:bg-purple-dark rounded-t-xl min-h-[575px] px-7 pt-7 pb-28'>
-            <div className='h-full max-w-xl mx-auto'>
-              <Routes>
-                <Route path='/' exact element={<Task />}/>
-                <Route path='/task' exact element={<Task />}/>
-                <Route path='/about' exact element={<About />}/>
-                <Route path='/login' exact element={<Login />}/>
-                <Route path='/register' exact element={<Register/>}/>
-              </Routes>
-            </div>
-          </main>
+          <Content>
+            <Routes>
+              <Route path='/' exact element={<Task />}/>
+              <Route path='/task' exact element={<Task />}/>
+              <Route path='/about' exact element={<About />}/>
+              <Route path='/login' exact element={<Login />}/>
+              <Route path='/register' exact element={<Register/>}/>
+            </Routes>
+          </Content>
         </div>
     </Router>
     </>
