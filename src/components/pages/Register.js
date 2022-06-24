@@ -1,15 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../Button'
 import Input from '../Input'
+import LoginError from '../inputError'
 
 function Register() {
 
+  const [errShow, setErrShow] = useState(false)
+
+  const getErrClose = () => {
+    setErrShow( error => error = false )
+  }
+
   const handleRegis = (event) => {
+
     event.preventDefault();
+
     const data = new FormData(event.currentTarget);
     const jsonData = {
         username: data.get('username'),
-        password: data.get('password')
+        password: data.get('password'),
+        confirm: data.get('confirm')
+    }
+
+    if ( jsonData.password !== jsonData.confirm ) {
+      setErrShow( error => error = 'Both password are not match.' )
+      return
     }
 
     fetch('http://localhost:3333/register', {
@@ -21,7 +36,11 @@ function Register() {
     })
     .then(response => response.json())
     .then(data => {
+      if (data.status) {
         window.location = '/login'
+      } else {
+        setErrShow( error => error = 'This username already in use.' )
+      }
     })
     .catch((error) => {
         console.error('error', error)
@@ -48,6 +67,11 @@ function Register() {
           type='password'
           holder='enter your password'
           label='Confirm Password'
+        />
+        <LoginError 
+          status={errShow} 
+          errClose={getErrClose}
+          errText={errShow}
         />
         <div className='flex w-full justify-center'>
           <Button 

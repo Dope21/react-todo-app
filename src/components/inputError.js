@@ -2,7 +2,8 @@ import { XIcon } from '@heroicons/react/outline'
 
 function LoginError({
     status,
-    errClose
+    errClose,
+    errText
 }) {
   
   const handleError = () => {
@@ -14,7 +15,7 @@ function LoginError({
 
   return (
     <div className={'w-full px-3 py-2 text-white bg-red-600 rounded-md mb-5 flex justify-between items-center '+ handleError()}>
-        <p>Wrong Username or Password</p>
+        <p>{errText}</p>
         <span onClick={handleErrorClose}>
           <XIcon className='w-5 cursor-pointer' />
         </span>

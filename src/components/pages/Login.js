@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { setUser } from '../../utils/Authen'
 import Button from '../Button'
 import Input from '../Input'
-import LoginError from '../LoginError'
+import LoginError from '../inputError'
 
 function Login() {
 
@@ -60,6 +60,7 @@ function Login() {
         <LoginError 
           status={errShow} 
           errClose={getErrClose}
+          errText={'Wrong username or password'}
         />
         <div className='flex justify-between items-center'>
           <Link to='/register' className='text-purple-main font-light'>Create an account</Link>
