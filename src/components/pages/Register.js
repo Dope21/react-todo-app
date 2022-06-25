@@ -27,7 +27,7 @@ function Register() {
       return
     }
 
-    fetch('http://localhost:3333/register', {
+    fetch('https://authentication-mysql.herokuapp.com/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

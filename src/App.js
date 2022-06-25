@@ -27,7 +27,7 @@ function App() {
 
   useEffect( () => {
     const token = localStorage.getItem('token')
-    fetch('http://localhost:3333/authen', {
+    fetch('https://authentication-mysql.herokuapp.com/authen', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

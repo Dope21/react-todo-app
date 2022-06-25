@@ -21,7 +21,7 @@ function Login() {
       password: data.get('password'),
     }
 
-    fetch('http://localhost:3333/login', {
+    fetch('https://authentication-mysql.herokuapp.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
