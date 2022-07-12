@@ -22,24 +22,6 @@ export const regisUser = async userData => {
   })
 
   return res.data
-  // fetch('https://authentication-mysql.herokuapp.com/register', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  //   body: JSON.stringify(jsonData),
-  // })
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     if (data.status) {
-  //       window.location = '/login'
-  //     } else {
-  //       setErrShow(error => (error = 'This username already in use.'))
-  //     }
-  //   })
-  //   .catch(error => {
-  //     console.error('error', error)
-  //   })
 }
 
 export const authenUser = async token => {
