@@ -4,7 +4,7 @@ A todo web application allows users to add and delete their todo task.
 This project also includes a Theme switching function with Tailwind 
 and an [Authentication API](https://github.com/Dope21/authentication-api) with Node, Express, JWT and MySQL. 
 
-## Live : (not available)
+## Live : [https://tnk-todo-app.netlify.app/](https://tnk-todo-app.netlify.app/)
 
 ## Stack
 - [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces.
