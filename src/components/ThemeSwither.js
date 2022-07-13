@@ -35,6 +35,9 @@ function ThemeSwither() {
           </div>
         </div>
       </div>
+      <span className="font-normal text-xs dark:text-slate-400">
+        Switch Theme
+      </span>
     </>
   )
 }
