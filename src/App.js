@@ -41,14 +41,9 @@ function App() {
     <>
       <Router>
         <div className="relative w-full h-screen bg-purple-main">
-          <div
-            className={
-              'absolute inset-0 bg-black opacity-40 z-10 ' +
-              (navShow ? 'visible' : 'invisible')
-            }
-            onClick={navHide}
-          />
           <Sidebar
+            backClick={navHide}
+            backActive={navShow}
             navShow={navShow ? '' : 'translate-x-[-100%]'}
             navItemClick={getNavClick}
           />
