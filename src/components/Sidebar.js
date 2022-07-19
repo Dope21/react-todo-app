@@ -51,19 +51,19 @@ function Sidebar({ backClick, backActive, navShow, navItemClick }) {
             </LinkItem>
             {getUser() ? (
               <LinkItem
-                path={'/login'}
-                onClick={handleItemClick}
-                Icon={<LoginIcon className="sideIcon" />}
-              >
-                Logout
-              </LinkItem>
-            ) : (
-              <LinkItem
                 path={'/'}
                 onClick={handleLogout}
                 Icon={<LogoutIcon className="sideIcon" />}
               >
                 Logout
+              </LinkItem>
+            ) : (
+              <LinkItem
+                path={'/login'}
+                onClick={handleItemClick}
+                Icon={<LoginIcon className="sideIcon" />}
+              >
+                Login
               </LinkItem>
             )}
           </ul>
